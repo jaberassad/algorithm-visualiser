@@ -4,7 +4,7 @@ let slider2 = document.getElementById("speed");
 let data = generate_array(5)
 let speed=0;
 let histogram_len=5;
-const maxValue = Math.max(...data);
+const maxValue = Math.max(...data)+15;
 let stop_sorting=false;
 let sorting = false;
 for (let j = 0; j < data.length; j++) {
@@ -12,6 +12,7 @@ for (let j = 0; j < data.length; j++) {
     let width = 100 / data.length;
     histogram.innerHTML += `<div id=${j} class='bar' style='height:${height}%; width:${width}%;'></div>`;
 }
+
 
 
 slider.addEventListener("input", function() {
@@ -25,7 +26,7 @@ slider.addEventListener("input", function() {
         let width = 100 / data.length;
         histogram.innerHTML += `<div id=${j} class='bar' style='height:${height}%; width:${width}%;'></div>`;
     }
-
+    console.log(data)
     update_histogram()
 });
 
@@ -48,10 +49,11 @@ function update_histogram(){
 function generate_array(len){
     let randomArray = [];
     for (let i = 0; i < len; i++) {
-        let randomInt =  Math.floor(Math.random() * 80)+50;
+        let randomInt =  Math.floor(Math.random() * 80)+20;
         randomArray.push(randomInt);
     }
-    return randomArray;
+
+    return randomArray
 }
 
 function sleep(ms) {

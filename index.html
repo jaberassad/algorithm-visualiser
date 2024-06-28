@@ -7,15 +7,22 @@
         <link href="style.css" rel="stylesheet">
     </head>
     <body>
+        <div class="nav">      
+            <btn id="bubble_sort">Bubble Sorting</btn>
+            <btn id="selection_sort">Selection Sorting</btn>
+            <btn id="insertion_sort">Insertion Sorting</btn>
+            <btn id="merge_sort">Merge Sorting</btn>
+            <btn id="quick_sort">Quick Sorting</btn>
+            <btn id="generate">Generate New Array</btn>
+        </div>
+        <div class="input-container">
+            <p>Array Length</p>
+            <input type="range" id="slider" min="5" max="100" value="5" step="1" />
+            <p>Sorting Speed</p>
+            <input type="range" id="speed" min="0" max="99.9" value="50" step="1" />
+        </div>
+
         <div id="histogram"></div>
-        <btn id="bubble_sort">Bubble Sorting</btn>
-        <btn id="selection_sort">Selection Sorting</btn>
-        <btn id="insertion_sort">Insertion Sorting</btn>
-        <btn id="merge_sort">Merge Sorting</btn>
-        <btn id="quick_sort">Quick Sorting</btn>
-        <input type="range" id="slider" min="5" max="100" value="5" step="1" />
-        <input type="range" id="speed" min="0" max="99.9" value="50" step="1" />
-        <btn id="generate">Generate New Array</btn>
         <script src="script.js"></script>
     </body>
 </html>
