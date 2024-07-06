@@ -1,14 +1,21 @@
-#histogram {
-    margin-top: 5%;
-    display: flex;
-    align-items: flex-end;
+#grid {
+    background-color: rgb(255, 255, 255);
     height: 40vw;
-    width: 100%;
-    border: 1px solid #ccc;
-    padding: 1%;
-    box-sizing: border-box;
+    width: 40vw;
+    margin-top: 5vw;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: solid;
 }
 
+.row {
+    display: flex; /* Ensure rows are displayed as flex containers */
+}
+
+.cubes {
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+}
 p{
     font-size: 1.2em;
     font-family: 'Arial', sans-serif;
@@ -119,3 +126,4 @@ input::-moz-range-thumb {
     background-color: #002994;
     transform: scale(0.95);
 }
+
