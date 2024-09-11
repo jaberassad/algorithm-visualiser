@@ -5,6 +5,8 @@ let size=slider_size.value;
 let speed;
 let sorting=false;
 let stop_sorting=false;
+let algo = document.getElementById("bfs")
+
 generate_grid()
 slider_size.addEventListener("input", function(){
     size=slider_size.value
@@ -59,7 +61,26 @@ function check_rock(block, direction){
     return color=="black"
 }
 
+function remove_green_path(){
+    // Get all the cubes
+    let blocks = document.getElementsByClassName("cubes");
+    
+    // Iterate through the cubes and remove the green path
+    Array.from(blocks).forEach((block) => {
+        if(block.style.backgroundColor === "green"){
+            block.style.backgroundColor = "white";
+        }
+    });
+}
+
+
 async function breath_first_search(){
+    remove_green_path()
+    if (sorting) {
+        console.log("cancelled")
+        return
+    }
+    algo.disabled=true
     let hash_map = new Map()
     sorting=true
     slider_size.disabled=true
@@ -121,8 +142,6 @@ async function breath_first_search(){
                 }
             }
         }
-    sorting=true
-    slider_size.disabled=true
     }
 
     prev.set("0,0",null)
@@ -146,9 +165,11 @@ async function breath_first_search(){
     Array.from(document.getElementsByClassName("cubes")).forEach(block=>{
         if (block.style.backgroundColor=="blue") block.style.backgroundColor=""
     })
-}
+    sorting=false
+    slider_size.disabled=false
+    algo.disabled=false
 
-let algo = document.getElementById("bfs")
+}
 algo.addEventListener("click", breath_first_search)
 
 let generate_btn = document.getElementById("generate")

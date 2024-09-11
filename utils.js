@@ -88,6 +88,7 @@ function generate_btn_f(){
     }
 }
 
+
 export default {
     update_histogram,
     sleep,
