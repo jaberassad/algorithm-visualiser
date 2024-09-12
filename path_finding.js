@@ -18,6 +18,7 @@ slider_speed.addEventListener("input", function(){
 })
 
 function generate_grid(){ 
+    sorting=false
     grid.innerHTML=""   
     for (let y = 0; y < size; y++) {
         let row = document.createElement('div');
