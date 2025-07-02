@@ -11,6 +11,8 @@ let slider2 = document.getElementById("speed");
 utils.generate_array(5);
 let maxValue;
 
+
+//init the histogram
 for (let j = 0; j < utils.data.length; j++) {
     maxValue = Math.max(...utils.data)+15;
     let height = (utils.data[j] / maxValue) * 40;
